@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Contact Management System</h1>
+
+        <section class="card">
+            <h2 id="form-title">Add Contact</h2>
+            <form id="contact-form" novalidate>
+                <input type="hidden" id="contact-id">
+                <div class="form-row">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-row">
+                    <label for="phone">Phone (10 digits)</label>
+                    <input type="tel" id="phone" placeholder="9876543210" required>
+                </div>
+                <div class="form-row">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" id="submit-btn">Add Contact</button>
+                    <button type="button" id="cancel-btn" class="secondary" hidden>Cancel</button>
+                </div>
+                <p id="form-error" class="error" role="alert"></p>
+            </form>
+        </section>
+
+        <section class="card">
+            <h2>Contacts</h2>
+            <p id="list-message" class="muted">Loading...</p>
+            <table id="contacts-table" hidden>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="contacts-body"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
